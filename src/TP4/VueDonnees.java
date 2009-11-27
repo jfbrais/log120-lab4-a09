@@ -9,7 +9,7 @@ public class VueDonnees extends JPanel implements Vue
 	public VueDonnees()
 	{
 		this.setBackground(Color.RED);
-		this.setSize(40, 40);
+		this.setBounds(0, 400, 80, 100);
 	}
 	
 	@Override
