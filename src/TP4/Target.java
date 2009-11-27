@@ -1,5 +1,7 @@
 package TP4;
 
+import java.awt.image.BufferedImage;
+
 /**
  * @author CB / TEAM CHJB
  * @version 1.0
