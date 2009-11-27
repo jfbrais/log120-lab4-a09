@@ -3,7 +3,7 @@ package TP4;
 import java.awt.image.BufferedImage;
 
 /**
- * @author CB / TEAM CHJB
+ * @author CB / TEAM CHJG
  * @version 1.0
  * @created 27-nov.-2009 14:20:25
  */
