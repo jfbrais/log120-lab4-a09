@@ -1,5 +1,11 @@
 package TP4;
 
-public class VueVignette {
+public class VueVignette implements Vue
+{
+	@Override
+	public void update() 
+	{
+		
+	}
 
 }
