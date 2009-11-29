@@ -10,7 +10,7 @@ import java.util.Observable;
 public class ModeleZoom extends Observable
 {
 	private static ModeleZoom instance = new ModeleZoom();
-	private int zoom;
+	private int zoom = 100;
 
 	private ModeleZoom()
 	{
@@ -29,7 +29,10 @@ public class ModeleZoom extends Observable
 
 	public void setZoom(int unZoom)
 	{
-		zoom = unZoom;
+		if (zoom+unZoom < 1)
+			return;
+		
+		zoom += unZoom;
 		
 		setChanged();
 		
