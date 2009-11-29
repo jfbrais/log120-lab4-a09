@@ -1,20 +1,18 @@
 package TP4;
 
-import java.awt.image.BufferedImage;
-import java.util.ArrayList;
 import java.util.Observable;
 
 public class ModeleImage extends Observable 
 {
 	private static ModeleImage instance = new ModeleImage();
-	private BufferedImage image;
+	private String image;
 	
 	private ModeleImage()
 	{
 		
 	}
 	
-	public BufferedImage getImage()
+	public String getImage()
 	{
 		return image;
 	}
@@ -24,12 +22,12 @@ public class ModeleImage extends Observable
 		return instance;
 	}
 	
-	public void setImage(BufferedImage uneImage)
+	public void setImage(String uneImage)
 	{
 		image = uneImage;
 		
 		setChanged();
 		
-		notifyObservers();
+		notifyObservers("Image");
 	}
 }

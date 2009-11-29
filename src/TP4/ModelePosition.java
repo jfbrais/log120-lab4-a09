@@ -1,6 +1,5 @@
 package TP4;
 
-import java.util.ArrayList;
 import java.util.Observable;
 
 public class ModelePosition extends Observable
@@ -35,7 +34,7 @@ public class ModelePosition extends Observable
 		
 		setChanged();
 		
-		notifyObservers();
+		notifyObservers("Position");
 	}
 	
 	public void setY(int y)
@@ -44,6 +43,6 @@ public class ModelePosition extends Observable
 		
 		setChanged();
 		
-		notifyObservers();
+		notifyObservers("Position");
 	}
 }

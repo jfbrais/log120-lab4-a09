@@ -15,7 +15,6 @@ public class Listeners implements MouseMotionListener
 	@Override
 	public void mouseDragged(MouseEvent arg0)
 	{
-		//System.out.println("Dragged! Dragged! Help!!!");
 		ABSCommand moveX = manager.createCommand("moveX",String.valueOf(arg0.getX()));
 		ABSCommand moveY = manager.createCommand("moveY",String.valueOf(arg0.getY()));
 		
@@ -31,6 +30,6 @@ public class Listeners implements MouseMotionListener
 	{
 		// TODO Auto-generated method stub
 	}
-	
+
 	//LORS DE LA RÉCUPÉRATION D'UNE CMD DE CARETAKER & CMDMANAGER, VÉRIFIER QUE C'EST != DE NULL
 }

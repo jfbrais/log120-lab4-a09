@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 public class VueImage extends JPanel implements Observer
 {
 	ImageIcon image = new ImageIcon(getClass().getResource("TICSH.jpg"));
-	Rectangle bounds = new Rectangle(80, 0, 420, 500);
+	Rectangle bounds = new Rectangle(0, 0, 500, 420);
 	int posX=0,posY=0,zoom=0;
 	
 	public VueImage()
@@ -24,6 +24,8 @@ public class VueImage extends JPanel implements Observer
 		this.addMouseMotionListener(new Listeners());
 		
 		new Target().registrerPosition(this);
+		new Target().registrerZoom(this);
+		new Target().registrerImage(this);
 		this.setLayout(null);
 	}
 	
@@ -33,16 +35,25 @@ public class VueImage extends JPanel implements Observer
 		
 		this.removeAll();
 		JLabel label = new JLabel(image);
-		label.setBounds(posX,posY,420,500);
+		label.setBounds(posX,posY,500,420);
 		this.add(label); 
 	} 
 	
 	@Override
 	public void update(Observable arg0, Object arg1)
 	{
-		posX = new Target().getX();
-		posY = new Target().getY();
-		zoom = new Target().getZoom();
+		if (arg1.equals("Position"))
+		{
+			posX = new Target().getX();
+			posY = new Target().getY();
+		}
+		
+		if (arg1.equals("Zoom"))
+			zoom = new Target().getZoom();
+			
+		if (arg1.equals("Image"))
+			image = new ImageIcon(getClass().getResource(new Target().getImage()));
+		
 		repaint();
 	}
 

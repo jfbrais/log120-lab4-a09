@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 
 public class VueVignette extends JPanel implements Observer
 {
-	Rectangle bounds = new Rectangle(0, 0, 80, 400);
+	Rectangle bounds = new Rectangle(0, 420, 80, 80);
 	public VueVignette()
 	{
 		this.setBackground(Color.GREEN);
