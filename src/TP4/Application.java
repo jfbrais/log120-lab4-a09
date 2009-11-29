@@ -2,6 +2,7 @@ package TP4;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+
 import javax.swing.JFrame;
 
 public class Application
@@ -15,8 +16,9 @@ public class Application
 	public static void main(String[] args)
 	{
 		JFrame frame = new JFrame();
-//		frame.setLayout(new MigLayout("", "[right]"));
-
+		
+		VueImage im = new VueImage();
+		frame.add(im);
 		
 		VueDonnees don = new VueDonnees();
 		frame.add(don);
@@ -24,13 +26,10 @@ public class Application
 		VueVignette vi = new VueVignette();
 		frame.add(vi);
 		
-		VueImage im = new VueImage();
-		frame.add(im);
-		
+		frame.setSize(500,500);
 		frame.setAlwaysOnTop(true);
 		frame.setVisible(true);
-		frame.setResizable(false);
-		frame.setSize(500,500);
+//		frame.setResizable(false);
 	}
 
 }

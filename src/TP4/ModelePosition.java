@@ -6,9 +6,9 @@ import java.util.Observable;
 public class ModelePosition extends Observable
 {
 	private static ModelePosition instance = new ModelePosition();
-	private ArrayList<Vue> vues;
-	private int coordX;
-	private int coordY;
+	private ArrayList<Vue> vues = new ArrayList<Vue>();
+	private int coordX = 0;
+	private int coordY = 0;
 	
 	private ModelePosition()
 	{
@@ -48,7 +48,7 @@ public class ModelePosition extends Observable
 		coordX = x;
 		
 		for (Vue node : vues)
-		{node.notify();}
+		{node.update();}
 	}
 	
 	public void setY(int y)
@@ -56,6 +56,6 @@ public class ModelePosition extends Observable
 		coordY = y;
 		
 		for (Vue node : vues)
-		{node.notify();}
+		{node.update();}
 	}
 }

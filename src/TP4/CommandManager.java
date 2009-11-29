@@ -2,23 +2,22 @@ package TP4;
 
 public class CommandManager
 {
-	public ABSCommand createCommand(String type)
+	public ABSCommand createCommand(String type, final String arg0)
 	{
 		if (type == "moveX")
 		{
 			return new ABSCommand()
 			{
-
 				@Override
 				public void doIt()
 				{
-					// TODO Auto-generated method stub
+					new Target().setX(Integer.parseInt(arg0));
 				}
 
 				@Override
 				public void undoIt()
 				{
-					// TODO Auto-generated method stub	
+					new Target().setX(Integer.parseInt(arg0)*-1);
 				}
 				
 			};
@@ -27,17 +26,16 @@ public class CommandManager
 		{
 			return new ABSCommand()
 			{
-
 				@Override
 				public void doIt()
 				{
-					// TODO Auto-generated method stub	
+					new Target().setY(Integer.parseInt(arg0));	
 				}
 
 				@Override
 				public void undoIt()
 				{
-					// TODO Auto-generated method stub					
+					new Target().setY(Integer.parseInt(arg0)*-1);				
 				}
 				
 			};
@@ -46,7 +44,6 @@ public class CommandManager
 		{
 			return new ABSCommand()
 			{
-
 				@Override
 				public void doIt()
 				{
@@ -65,7 +62,6 @@ public class CommandManager
 		{
 			return new ABSCommand()
 			{
-
 				@Override
 				public void doIt()
 				{
