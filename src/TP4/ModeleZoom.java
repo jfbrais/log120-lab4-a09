@@ -10,19 +10,12 @@ import java.util.Observable;
  */
 public class ModeleZoom extends Observable
 {
-
 	private static ModeleZoom instance = new ModeleZoom();
-	private ArrayList<Vue> vues = new ArrayList<Vue>();
 	private int zoom;
 
 	private ModeleZoom()
 	{
 
-	}
-
-	public void addVue(Vue uneVue)
-	{
-		vues.add(uneVue);
 	}
 
 	public static ModeleZoom getInstance()
@@ -35,20 +28,13 @@ public class ModeleZoom extends Observable
 		return zoom;
 	}
 
-	public void removeVue(Vue uneVue)
-	{
-		if (vues.indexOf(uneVue)!=-1)
-		{
-			vues.remove(vues.indexOf(uneVue));
-		}
-	}
-
 	public void setZoom(int unZoom)
 	{
 		zoom = unZoom;
 		
-		for (Vue node : vues)
-		{node.update();}
+		setChanged();
+		
+		notifyObservers();
 	}
 
 }

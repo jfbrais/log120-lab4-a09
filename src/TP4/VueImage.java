@@ -38,12 +38,6 @@ public class VueImage extends JPanel implements Observer
 	} 
 	
 	@Override
-	public void update() 
-	{
-		
-	}
-
-	@Override
 	public void update(Observable arg0, Object arg1)
 	{
 		posX = new Target().getX();

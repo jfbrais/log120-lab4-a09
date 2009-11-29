@@ -7,17 +7,11 @@ import java.util.Observable;
 public class ModeleImage extends Observable 
 {
 	private static ModeleImage instance = new ModeleImage();
-	private ArrayList<Vue> vues = new ArrayList<Vue>();
 	private BufferedImage image;
 	
 	private ModeleImage()
 	{
 		
-	}
-	
-	public void addVue(Vue uneVue)
-	{
-		vues.add(uneVue);
 	}
 	
 	public BufferedImage getImage()
@@ -30,19 +24,12 @@ public class ModeleImage extends Observable
 		return instance;
 	}
 	
-	public void removeVue(Vue uneVue)
-	{
-		if (vues.indexOf(uneVue)!=-1)
-		{
-			vues.remove(vues.indexOf(uneVue));
-		}
-	}
-	
 	public void setImage(BufferedImage uneImage)
 	{
 		image = uneImage;
 		
-		for (Vue node : vues)
-		{node.update();}
+		setChanged();
+		
+		notifyObservers();
 	}
 }
