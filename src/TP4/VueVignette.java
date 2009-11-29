@@ -11,11 +11,17 @@ import javax.swing.JPanel;
 
 public class VueVignette extends JPanel implements Observer
 {
-	Rectangle bounds = new Rectangle(0, 420, 80, 80);
+	Rectangle bounds = new Rectangle(150, 420, 350, 100);
 	public VueVignette()
 	{
 		this.setBackground(Color.GREEN);
 		this.setBounds(bounds);
+		
+		new Target().registrerPosition(this);
+		new Target().registrerZoom(this);
+		new Target().registrerImage(this);
+		
+		this.setLayout(null);
 	}
 	
 	public void paintComponent(Graphics g)
