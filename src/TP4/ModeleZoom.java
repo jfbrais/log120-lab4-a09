@@ -11,7 +11,7 @@ import java.util.Observable;
 public class ModeleZoom extends Observable {
 
 	private static ModeleZoom instance = new ModeleZoom();
-	private ArrayList<Vue> lavues;
+	private ArrayList<Vue> vues;
 	private int zoom;
 
 	private ModeleZoom()

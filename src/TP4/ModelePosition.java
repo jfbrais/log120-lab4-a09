@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class ModelePosition 
 {
 	private static ModelePosition instance = new ModelePosition();
-	private ArrayList<Vue> lavues;
+	private ArrayList<Vue> vues;
 	int coordX;
 	int coordY;
 	
