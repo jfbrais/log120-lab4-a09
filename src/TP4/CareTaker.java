@@ -4,8 +4,19 @@ import java.util.ArrayList;
 
 public class CareTaker
 {
+	private static CareTaker instance = new CareTaker();
 	ArrayList<MementoImageIF> redo = new ArrayList<MementoImageIF>();
 	ArrayList<MementoImageIF> undo = new ArrayList<MementoImageIF>();
+	
+	private CareTaker()
+	{
+		
+	}
+	
+	public static CareTaker getInstance()
+	{
+		return instance;
+	}
 	
 	public void addMemento(MementoImageIF newMemento)
 	{

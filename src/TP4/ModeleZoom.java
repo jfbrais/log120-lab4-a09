@@ -12,7 +12,7 @@ public class ModeleZoom extends Observable
 {
 
 	private static ModeleZoom instance = new ModeleZoom();
-	private ArrayList<Vue> vues;
+	private ArrayList<Vue> vues = new ArrayList<Vue>();
 	private int zoom;
 
 	private ModeleZoom()
@@ -48,7 +48,7 @@ public class ModeleZoom extends Observable
 		zoom = unZoom;
 		
 		for (Vue node : vues)
-		{node.notify();}
+		{node.update();}
 	}
 
 }

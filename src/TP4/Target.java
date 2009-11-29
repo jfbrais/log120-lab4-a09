@@ -61,7 +61,7 @@ public class Target
 	
 	public void registrerPosition(Vue laVue)
 	{
-		
+		mPosition.addVue(laVue);
 	}
 	
 	public void registrerZoom(Vue laVue)

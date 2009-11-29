@@ -7,7 +7,7 @@ import java.util.Observable;
 public class ModeleImage extends Observable 
 {
 	private static ModeleImage instance = new ModeleImage();
-	private ArrayList<Vue> vues;
+	private ArrayList<Vue> vues = new ArrayList<Vue>();
 	private BufferedImage image;
 	
 	private ModeleImage()
@@ -43,6 +43,6 @@ public class ModeleImage extends Observable
 		image = uneImage;
 		
 		for (Vue node : vues)
-		{node.notify();}
+		{node.update();}
 	}
 }
