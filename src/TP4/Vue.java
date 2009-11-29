@@ -1,6 +1,8 @@
 package TP4;
 
-public interface Vue
+import java.util.Observer;
+
+public interface Vue extends Observer
 {
 	public void update();
 }

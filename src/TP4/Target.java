@@ -1,6 +1,7 @@
 package TP4;
 
 import java.awt.image.BufferedImage;
+import java.util.Observer;
 
 /**
  * @author CB / TEAM CHJG
@@ -59,9 +60,9 @@ public class Target
 		
 	}
 	
-	public void registrerPosition(Vue laVue)
+	public void registrerPosition(Observer laVue)
 	{
-		mPosition.addVue(laVue);
+		mPosition.addObserver(laVue);
 	}
 	
 	public void registrerZoom(Vue laVue)

@@ -3,11 +3,14 @@ package TP4;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
+import java.util.Observable;
+import java.util.Observer;
+
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class VueImage extends JPanel implements Vue
+public class VueImage extends JPanel implements Observer
 {
 	ImageIcon image = new ImageIcon(getClass().getResource("TICSH.jpg"));
 	Rectangle bounds = new Rectangle(80, 0, 420, 500);
@@ -36,6 +39,12 @@ public class VueImage extends JPanel implements Vue
 	
 	@Override
 	public void update() 
+	{
+		
+	}
+
+	@Override
+	public void update(Observable arg0, Object arg1)
 	{
 		posX = new Target().getX();
 		posY = new Target().getY();
