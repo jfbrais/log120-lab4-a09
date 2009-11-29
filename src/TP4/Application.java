@@ -25,7 +25,7 @@ public class Application
 		
 		new Target().setImage("TICSH.jpg");
 		
-		frame.setSize(500,537);
+		frame.setSize(500,527);
 		frame.setAlwaysOnTop(true);
 		frame.setVisible(true);
 		frame.setResizable(false);
