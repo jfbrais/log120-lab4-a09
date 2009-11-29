@@ -2,8 +2,10 @@ package TP4;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
+import java.awt.event.MouseWheelEvent;
+import java.awt.event.MouseWheelListener;
 
-public class Listeners implements MouseMotionListener
+public class Listeners implements MouseMotionListener, MouseWheelListener
 {
 	CommandManager manager = new CommandManager();
 	CareTaker careTaker = CareTaker.getInstance();
@@ -31,6 +33,19 @@ public class Listeners implements MouseMotionListener
 	public void mouseMoved(MouseEvent arg0)
 	{
 		// TODO Auto-generated method stub
+	}
+
+	@Override
+	public void mouseWheelMoved(MouseWheelEvent arg0)
+	{
+		ABSCommand changeZoom = manager.createCommand("changeZoom", String.valueOf(arg0.getWheelRotation()));
+		
+		if (changeZoom!=null)
+		{
+			changeZoom.doIt();
+			careTaker.addMemento(changeZoom);
+		}
+		
 	}
 
 	//LORS DE LA RÉCUPÉRATION D'UNE CMD DE CARETAKER & CMDMANAGER, VÉRIFIER QUE C'EST != DE NULL

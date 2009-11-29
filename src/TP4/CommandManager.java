@@ -47,16 +47,17 @@ public class CommandManager
 		{
 			return new ABSCommand()
 			{
+				final int changeZoom = Integer.parseInt(arg0);
 				@Override
 				public void doIt()
 				{
-					// TODO Auto-generated method stub					
+					new Target().setZoom(changeZoom*-1);				
 				}
 
 				@Override
 				public void undoIt()
 				{
-					// TODO Auto-generated method stub					
+					new Target().setZoom(changeZoom);					
 				}
 				
 			};
