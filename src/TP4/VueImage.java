@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 
 public class VueImage extends JPanel implements Observer
 {
-	ImageIcon image = new ImageIcon(getClass().getResource("TICSH.jpg"));
+	String image = "";
 	Rectangle bounds = new Rectangle(0, 0, 500, 420);
 	int posX=0,posY=0,zoom=0;
 	
@@ -34,7 +34,7 @@ public class VueImage extends JPanel implements Observer
 		super.paintComponent(g);
 		
 		this.removeAll();
-		JLabel label = new JLabel(image);
+		JLabel label = new JLabel(new ImageIcon(getClass().getResource(image)));
 		label.setBounds(posX,posY,500,420);
 		this.add(label); 
 	} 
@@ -52,7 +52,7 @@ public class VueImage extends JPanel implements Observer
 			zoom = new Target().getZoom();
 			
 		if (arg1.equals("Image"))
-			image = new ImageIcon(getClass().getResource(new Target().getImage()));
+			image = new Target().getImage();
 		
 		repaint();
 	}

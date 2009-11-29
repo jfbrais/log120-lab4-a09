@@ -18,11 +18,17 @@ public class Listeners implements MouseMotionListener
 		ABSCommand moveX = manager.createCommand("moveX",String.valueOf(arg0.getX()));
 		ABSCommand moveY = manager.createCommand("moveY",String.valueOf(arg0.getY()));
 		
-		moveX.doIt();
-		careTaker.addMemento(moveX);
+		if (moveX!=null)
+		{
+			moveX.doIt();
+			careTaker.addMemento(moveX);
+		}
 		
-		moveY.doIt();
-		careTaker.addMemento(moveY);
+		if (moveY!=null)
+		{
+			moveY.doIt();
+			careTaker.addMemento(moveY);
+		}
 	}
 
 	@Override

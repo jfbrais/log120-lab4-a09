@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class CareTaker
 {
 	private static CareTaker instance = new CareTaker();
-	ArrayList<MementoImageIF> redo = new ArrayList<MementoImageIF>();
-	ArrayList<MementoImageIF> undo = new ArrayList<MementoImageIF>();
+	ArrayList<ABSCommand> redo = new ArrayList<ABSCommand>();
+	ArrayList<ABSCommand> undo = new ArrayList<ABSCommand>();
 	
 	private CareTaker()
 	{
@@ -18,15 +18,15 @@ public class CareTaker
 		return instance;
 	}
 	
-	public void addMemento(MementoImageIF newMemento)
+	public void addMemento(ABSCommand newMemento)
 	{
 		undo.add(newMemento);
 		
-		for (MementoImageIF stack : redo)
+		for (ABSCommand stack : redo)
 		{redo.remove(stack);}
 	}
 	
-	public MementoImageIF restoreMemento()
+	public ABSCommand restoreMemento()
 	{
 		if (undo.size() > 1)
 		{

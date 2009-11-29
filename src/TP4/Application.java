@@ -26,7 +26,9 @@ public class Application
 		VueVignette vi = new VueVignette();
 		frame.add(vi);
 		
-		frame.setSize(500,500);
+		new Target().setImage("TICSH.jpg");
+		
+		frame.setSize(500,537);
 		frame.setAlwaysOnTop(true);
 		frame.setVisible(true);
 //		frame.setResizable(false);
