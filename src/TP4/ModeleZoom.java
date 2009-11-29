@@ -1,6 +1,5 @@
 package TP4;
 
-import java.util.ArrayList;
 import java.util.Observable;
 
 /**
@@ -34,7 +33,7 @@ public class ModeleZoom extends Observable
 		
 		setChanged();
 		
-		notifyObservers();
+		notifyObservers("Zoom");
 	}
 
 }

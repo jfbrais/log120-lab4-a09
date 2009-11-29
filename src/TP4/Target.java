@@ -15,12 +15,12 @@ public class Target
 	ModeleImage mImage = ModeleImage.getInstance();
 	ModelePosition mPosition = ModelePosition.getInstance();
 
-	public BufferedImage getImage()
+	public String getImage()
 	{
 		return mImage.getImage();
 	}
 
-	public void setImage(BufferedImage uneImage)
+	public void setImage(String uneImage)
 	{
 		mImage.setImage(uneImage);
 	}

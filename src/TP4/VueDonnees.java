@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 
 public class VueDonnees extends JPanel implements Observer
 {
-	Rectangle bounds = new Rectangle(0, 400, 80, 100);
+	Rectangle bounds = new Rectangle(80, 420, 420, 80);
 	public VueDonnees()
 	{
 		this.setBackground(Color.RED);
