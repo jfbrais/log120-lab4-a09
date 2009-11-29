@@ -55,18 +55,18 @@ public class Target
 		mZoom.setZoom(leZoom);
 	}
 
-	public void registrerImage(Vue laVue)
+	public void registrerImage(Observer observer)
 	{
-		
+		mImage.addObserver(observer);
 	}
 	
-	public void registrerPosition(Observer laVue)
+	public void registrerPosition(Observer observer)
 	{
-		mPosition.addObserver(laVue);
+		mPosition.addObserver(observer);
 	}
 	
-	public void registrerZoom(Vue laVue)
+	public void registrerZoom(Observer observer)
 	{
-		
+		mZoom.addObserver(observer);
 	}
 }

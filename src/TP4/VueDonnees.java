@@ -3,10 +3,12 @@ package TP4;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
+import java.util.Observable;
+import java.util.Observer;
 
 import javax.swing.JPanel;
 
-public class VueDonnees extends JPanel implements Vue
+public class VueDonnees extends JPanel implements Observer
 {
 	Rectangle bounds = new Rectangle(0, 400, 80, 100);
 	public VueDonnees()
@@ -21,12 +23,11 @@ public class VueDonnees extends JPanel implements Vue
 		
 		this.setBounds(bounds); 
 	} 
-	
+
 	@Override
-	public void update() 
+	public void update(Observable arg0, Object arg1)
 	{
+		// TODO Auto-generated method stub
 		
 	}
-	
-	
 }
