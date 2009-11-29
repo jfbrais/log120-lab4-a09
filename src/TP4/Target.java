@@ -7,66 +7,65 @@ import java.awt.image.BufferedImage;
  * @version 1.0
  * @created 27-nov.-2009 14:20:25
  */
-public class Target {
+public class Target
+{
 
-	public Target()
-	{
-
-	}
+	ModeleZoom mZoom = ModeleZoom.getInstance();
+	ModeleImage mImage = ModeleImage.getInstance();
+	ModelePosition mPosition = ModelePosition.getInstance();
 
 	public BufferedImage getImage()
 	{
-		return null;
+		return mImage.getImage();
 	}
-	
-	/**
-	 * 
-	 * @param 1
-	 */
+
 	public void setImage(BufferedImage uneImage)
 	{
-
+		mImage.setImage(uneImage);
 	}
 
 	public int getX()
 	{
-		return 0;
+		return mPosition.getX();
 	}
 
 	public int getY()
 	{
-		return 0;
+		return mPosition.getY();
 	}
 
 	public int getZoom()
 	{
-		return 0;
+		return mZoom.getZoom();
 	}
 
-
-
-	/**
-	 * 
-	 * @param 1
-	 */
-	public void setX(int leX){
-
+	public void setX(int leX)
+	{
+		mPosition.setX(leX);
 	}
 
-	/**
-	 * 
-	 * @param 1
-	 */
-	public void setY(int leY){
-
+	public void setY(int leY)
+	{
+		mPosition.setY(leY);
 	}
 
-	/**
-	 * 
-	 * @param 1
-	 */
-	public void setZoom(int leZoom){
-
+	public void setZoom(int leZoom)
+	{
+		mZoom.setZoom(leZoom);
 	}
 
+	public void registrerImage(Vue laVue)
+	{
+		
+	}
+	
+	public void registrerPosition(Vue laVue)
+	{
+		
+	}
+	
+	public void registrerZoom(Vue laVue)
+	{
+		
+	}
 }

@@ -17,7 +17,7 @@ public class ModeleImage extends Observable
 	
 	public void addVue(Vue uneVue)
 	{
-
+		vues.add(uneVue);
 	}
 	
 	public BufferedImage getImage()
@@ -32,11 +32,17 @@ public class ModeleImage extends Observable
 	
 	public void removeVue(Vue uneVue)
 	{
-		
+		if (vues.indexOf(uneVue)!=-1)
+		{
+			vues.remove(vues.indexOf(uneVue));
+		}
 	}
 	
 	public void setImage(BufferedImage uneImage)
 	{
+		image = uneImage;
 		
+		for (Vue node : vues)
+		{node.notify();}
 	}
 }
