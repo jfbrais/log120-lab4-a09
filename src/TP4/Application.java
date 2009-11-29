@@ -1,8 +1,5 @@
 package TP4;
 
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-
 import javax.swing.JFrame;
 
 public class Application
@@ -31,7 +28,7 @@ public class Application
 		frame.setSize(500,537);
 		frame.setAlwaysOnTop(true);
 		frame.setVisible(true);
-//		frame.setResizable(false);
+		frame.setResizable(false);
 	}
 
 }
