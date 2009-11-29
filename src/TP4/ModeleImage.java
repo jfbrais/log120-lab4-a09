@@ -1,14 +1,14 @@
 package TP4;
 
-import java.io.BufferedReader;
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.Observable;
 
 public class ModeleImage extends Observable 
 {
 	private static ModeleImage instance = new ModeleImage();
-	private ArrayList<Vue> lavues;
-	private BufferedReader image;
+	private ArrayList<Vue> vues;
+	private BufferedImage image;
 	
 	private ModeleImage()
 	{
@@ -20,7 +20,7 @@ public class ModeleImage extends Observable
 
 	}
 	
-	public BufferedReader getImage()
+	public BufferedImage getImage()
 	{
 		return image;
 	}
@@ -35,7 +35,7 @@ public class ModeleImage extends Observable
 		
 	}
 	
-	public void setImage(BufferedReader uneImage)
+	public void setImage(BufferedImage uneImage)
 	{
 		
 	}
