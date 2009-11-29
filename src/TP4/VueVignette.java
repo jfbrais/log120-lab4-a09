@@ -40,7 +40,7 @@ public class VueVignette extends JPanel implements Observer
 		ImageIcon icon = new ImageIcon(getClass().getResource(image));
 		ImageIcon thumbnailIcon = new ImageIcon(createResizedCopy(icon.getImage(), 100, 80,false));
 		JLabel label = new JLabel(thumbnailIcon);
-		label.setBounds(150,420,100,80);
+		label.setBounds(275,420,100,80);
 		this.add(label); 
 	} 
 	//ImageIcon thumbnailIcon = new ImageIcon(getScaledImage(icon.getImage(), 32, 32));

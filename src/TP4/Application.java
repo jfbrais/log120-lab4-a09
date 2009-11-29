@@ -15,12 +15,15 @@ public class Application
 		JFrame frame = new JFrame();
 		
 		VueImage im = new VueImage();
+//		im.setBounds(0, 0, 500, 420);
 		frame.add(im);
 		
 		VueDonnees don = new VueDonnees();
+//		don.setBounds(0, 420, 150, 80);
 		frame.add(don);
 
 		VueVignette vi = new VueVignette();
+//		vi.setBounds(150, 420, 350, 80);
 		frame.add(vi);
 		
 		new Target().setImage("TICSH.jpg");
