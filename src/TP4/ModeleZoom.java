@@ -8,7 +8,8 @@ import java.util.Observable;
  * @version 1.0
  * @created 27-nov.-2009 14:26:27
  */
-public class ModeleZoom extends Observable {
+public class ModeleZoom extends Observable
+{
 
 	private static ModeleZoom instance = new ModeleZoom();
 	private ArrayList<Vue> vues;
@@ -19,13 +20,9 @@ public class ModeleZoom extends Observable {
 
 	}
 
-	/**
-	 * 
-	 * @param 1
-	 */
 	public void addVue(Vue uneVue)
 	{
-
+		vues.add(uneVue);
 	}
 
 	public static ModeleZoom getInstance()
@@ -35,24 +32,23 @@ public class ModeleZoom extends Observable {
 
 	public int getZoom()
 	{
-		return 0;
+		return zoom;
 	}
 
-	/**
-	 * 
-	 * @param 1
-	 */
 	public void removeVue(Vue uneVue)
 	{
-
+		if (vues.indexOf(uneVue)!=-1)
+		{
+			vues.remove(vues.indexOf(uneVue));
+		}
 	}
 
-	/**
-	 * 
-	 * @param 1
-	 */
-	public void setZoom(int unZoom){
-
+	public void setZoom(int unZoom)
+	{
+		zoom = unZoom;
+		
+		for (Vue node : vues)
+		{node.notify();}
 	}
 
 }

@@ -1,14 +1,14 @@
 package TP4;
 
-import java.io.BufferedReader;
 import java.util.ArrayList;
+import java.util.Observable;
 
-public class ModelePosition 
+public class ModelePosition extends Observable
 {
 	private static ModelePosition instance = new ModelePosition();
 	private ArrayList<Vue> vues;
-	int coordX;
-	int coordY;
+	private int coordX;
+	private int coordY;
 	
 	private ModelePosition()
 	{
@@ -17,7 +17,7 @@ public class ModelePosition
 	
 	public void addVue(Vue uneVue)
 	{
-
+		vues.add(uneVue);
 	}
 	
 	public static ModelePosition getInstance()
@@ -27,26 +27,35 @@ public class ModelePosition
 	
 	public void removeVue(Vue uneVue)
 	{
-		
+		if (vues.indexOf(uneVue)!=-1)
+		{
+			vues.remove(vues.indexOf(uneVue));
+		}
 	}
 	
 	public int getX()
 	{
-		return 0;
+		return coordX;
 	}
 	
 	public int getY()
 	{
-		return 0;
+		return coordY;
 	}
 	
 	public void setX(int x)
 	{
+		coordX = x;
 		
+		for (Vue node : vues)
+		{node.notify();}
 	}
 	
 	public void setY(int y)
 	{
+		coordY = y;
 		
+		for (Vue node : vues)
+		{node.notify();}
 	}
 }
