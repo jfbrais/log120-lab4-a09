@@ -39,6 +39,8 @@ public class VueImage extends JPanel implements Observer
 		super.paintComponent(g);
 		
 		this.removeAll();
+		this.setLayout(null);
+		
 		ImageIcon icon = new ImageIcon(getClass().getResource(image));
 		ImageIcon imageIcon = new ImageIcon(createResizedCopy(icon.getImage(), 500*zoom/100, 420*zoom/100,false));
 		JLabel label = new JLabel(imageIcon);

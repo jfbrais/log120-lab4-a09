@@ -33,6 +33,8 @@ public class VueDonnees extends JPanel implements Observer
 		super.paintComponent(g);
 		
 		this.removeAll();
+		this.setLayout(null);
+		
 		JLabel labelX = new JLabel("X : "+String.valueOf(posX));
 		labelX.setBounds(10,5,100,15);
 		this.add(labelX); 

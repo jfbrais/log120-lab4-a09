@@ -37,11 +37,17 @@ public class VueVignette extends JPanel implements Observer
 		super.paintComponent(g);
 		
 		this.removeAll();
+		this.setLayout(null);
+		
 		ImageIcon icon = new ImageIcon(getClass().getResource(image));
 		ImageIcon thumbnailIcon = new ImageIcon(createResizedCopy(icon.getImage(), 100, 80,false));
 		JLabel label = new JLabel(thumbnailIcon);
 		label.setBounds(275,420,100,80);
 		this.add(label); 
+		
+		g.setColor(Color.RED);
+		g.drawRect(275+posX*100/500, 420+posY*80/420, 100*zoom/100, 80*zoom/100);
+		//Fuck, il devrais pas rappetisser, mais grossir quand on dezoom....
 	} 
 	//ImageIcon thumbnailIcon = new ImageIcon(getScaledImage(icon.getImage(), 32, 32));
 
