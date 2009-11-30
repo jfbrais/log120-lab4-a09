@@ -5,7 +5,7 @@ import java.util.Observable;
 public class ModeleImage extends Observable 
 {
 	private static ModeleImage instance = new ModeleImage();
-	private String image;
+	private String image ="";
 	
 	private ModeleImage()
 	{

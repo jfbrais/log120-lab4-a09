@@ -26,7 +26,7 @@ public class Application
 //		vi.setBounds(150, 420, 350, 80);
 		frame.add(vi);
 		
-		new Target().setImage("TICSH.jpg");
+		new Target().setImage("DoIt.jpg");
 		
 		frame.setSize(500,527);
 		frame.setAlwaysOnTop(true);

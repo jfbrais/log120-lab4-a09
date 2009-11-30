@@ -66,16 +66,17 @@ public class CommandManager
 		{
 			return new ABSCommand()
 			{
+				final String undoImage = new Target().getImage();
 				@Override
 				public void doIt()
 				{
-					// TODO Auto-generated method stub					
+					new Target().setImage(arg0);
 				}
 
 				@Override
 				public void undoIt()
 				{
-					// TODO Auto-generated method stub
+					new Target().setImage(undoImage);
 				}
 				
 			};
