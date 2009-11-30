@@ -25,9 +25,11 @@ public class VueVignette extends JPanel implements Observer
 		this.setBackground(Color.DARK_GRAY);
 		this.setBounds(bounds);
 		
-		new Target().registrerPosition(this);
-		new Target().registrerZoom(this);
-		new Target().registrerImage(this);
+		//new Target().registrerPosition(this);
+		//new Target().registrerZoom(this);
+		//new Target().registrerImage(this);
+		
+		this.addMouseListener(new Listeners());
 		
 		this.setLayout(null);
 	}
@@ -39,14 +41,26 @@ public class VueVignette extends JPanel implements Observer
 		this.removeAll();
 		this.setLayout(null);
 		
-		ImageIcon icon = new ImageIcon(getClass().getResource(image));
+		ImageIcon icon = new ImageIcon(getClass().getResource("TICSH.jpg"));
 		ImageIcon thumbnailIcon = new ImageIcon(createResizedCopy(icon.getImage(), 100, 80,false));
 		JLabel label = new JLabel(thumbnailIcon);
-		label.setBounds(275,420,100,80);
+		label.setBounds(175,420,100,80);
 		this.add(label); 
 		
-		g.setColor(Color.RED);
-		g.drawRect(275+posX*100/500, 420+posY*80/420, 100*zoom/100, 80*zoom/100);
+		ImageIcon icon2 = new ImageIcon(getClass().getResource("DoIt.jpg"));
+		ImageIcon thumbnailIcon2 = new ImageIcon(createResizedCopy(icon2.getImage(), 100, 80,false));
+		JLabel label2 = new JLabel(thumbnailIcon2);
+		label2.setBounds(275,420,100,80);
+		this.add(label2); 
+		
+		ImageIcon icon3 = new ImageIcon(getClass().getResource("Jack.jpg"));
+		ImageIcon thumbnailIcon3 = new ImageIcon(createResizedCopy(icon3.getImage(), 100, 80,false));
+		JLabel label3 = new JLabel(thumbnailIcon3);
+		label3.setBounds(375,420,100,80);
+		this.add(label3);
+		
+//		g.setColor(Color.RED);
+//		g.drawRect(275+posX*100/500, 420+posY*80/420, 100*zoom/100, 80*zoom/100);
 		//Fuck, il devrais pas rappetisser, mais grossir quand on dezoom....
 	} 
 	//ImageIcon thumbnailIcon = new ImageIcon(getScaledImage(icon.getImage(), 32, 32));
