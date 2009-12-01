@@ -41,7 +41,7 @@ public class Listeners implements MouseMotionListener, MouseWheelListener, Mouse
 	@Override
 	public void mouseWheelMoved(MouseWheelEvent arg0)
 	{
-		ABSCommand changeZoom = manager.createCommand("changeZoom", String.valueOf(arg0.getWheelRotation()));
+		ABSCommand changeZoom = manager.createCommand("changeZoom", String.valueOf(10*arg0.getWheelRotation()));
 		
 		if (changeZoom!=null)
 		{

@@ -29,7 +29,7 @@ public class ModeleZoom extends Observable
 
 	public void setZoom(int unZoom)
 	{
-		if (zoom+unZoom < 1 || zoom+unZoom > 2000)
+		if (zoom+unZoom < 1 || zoom+unZoom > 500)
 			return;
 		
 		zoom += unZoom;
