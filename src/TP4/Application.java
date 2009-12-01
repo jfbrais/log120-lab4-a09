@@ -39,7 +39,7 @@ public class Application
 		
 		new Target().setImage("DoIt.jpg");
 		
-		frame.setSize(500,555);//527
+		frame.setSize(500,550);//527
 		frame.setAlwaysOnTop(true);
 		frame.setVisible(true);
 		frame.setResizable(false);
