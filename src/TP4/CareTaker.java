@@ -22,17 +22,28 @@ public class CareTaker
 	{
 		undo.add(newMemento);
 		
-		for (ABSCommand stack : redo)
-		{redo.remove(stack);}
+		redo = new ArrayList<ABSCommand>();
 	}
 	
-	public ABSCommand restoreMemento()
+	public ABSCommand getUndoMemento()
 	{
-		if (undo.size() > 1)
+		if (undo.size() > 0)
 		{
 			redo.add(undo.get(undo.size()-1));
 			undo.remove(undo.size()-1);
 			return redo.get(redo.size()-1);
+		}
+		else
+			return null;
+	}
+	
+	public ABSCommand getRedoMemento()
+	{
+		if (redo.size() > 0)
+		{
+			undo.add(redo.get(redo.size()-1));
+			redo.remove(redo.size()-1);
+			return undo.get(undo.size()-1);
 		}
 		else
 			return null;

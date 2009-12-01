@@ -84,9 +84,4 @@ public class CommandManager
 		else
 			return null;
 	}
-	
-	public void undoCommand()
-	{
-		System.out.println("I HAS CTRL+Z!!1!!11!11!!!");
-	}
 }
