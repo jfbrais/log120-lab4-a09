@@ -1,5 +1,7 @@
 package TP4;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
@@ -96,6 +98,62 @@ public class Listeners implements MouseMotionListener, MouseWheelListener, Mouse
 	{
 		// TODO Auto-generated method stub
 		
+	}
+	
+	public ActionListener getUndoListener()
+	{
+		return new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent e)
+			{
+				ABSCommand undo = careTaker.getUndoMemento();
+				if (undo!=null)
+				{
+					undo.undoIt();
+				}
+			}
+		};
+	}
+	
+	public ActionListener getRedoListener()
+	{
+		return new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent e)
+			{
+				ABSCommand redo = careTaker.getRedoMemento();
+				if (redo!=null)
+				{
+					redo.doIt();
+				}		
+			}
+		};
+	}
+	
+	public ActionListener getCopyListener()
+	{
+		return new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent e)
+			{
+				System.out.println("Copy");			
+			}
+		};
+	}
+	
+	public ActionListener getPasteListener()
+	{
+		return new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent e)
+			{
+				System.out.println("Paste");			
+			}
+		};
 	}
 
 	//LORS DE LA RÉCUPÉRATION D'UNE CMD DE CARETAKER & CMDMANAGER, VÉRIFIER QUE C'EST != DE NULL
