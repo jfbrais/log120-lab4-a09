@@ -28,7 +28,12 @@ public class ModelePosition extends Observable
 	
 	public void setX(int x)
 	{
-		coordX += x;
+//		if (coordX + x < 500 && coordX + x > -500)
+			coordX += x;
+//		else if (coordX + x > 500)
+//			coordX = -500+x;
+//		else
+//			coordX = 500-x;
 		
 		setChanged();
 		
@@ -37,7 +42,12 @@ public class ModelePosition extends Observable
 	
 	public void setY(int y)
 	{
-		coordY += y;
+//		if (coordY + y < 500 && coordY + y > -500)
+			coordY += y;
+//		else if (coordY + y > 500)
+//			coordY = -500+y;
+//		else
+//			coordY = 500-y;
 		
 		setChanged();
 		
