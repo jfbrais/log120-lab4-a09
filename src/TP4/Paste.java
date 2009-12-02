@@ -1,6 +1,6 @@
 package TP4;
 
-public class PasteImage extends PasteIF
+public class Paste extends PasteIF
 {
 	@Override
 	public void pasteIt() 
