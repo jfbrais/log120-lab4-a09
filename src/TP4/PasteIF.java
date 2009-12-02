@@ -2,25 +2,19 @@ package TP4;
 
 public abstract class PasteIF 
 {
-	private int coordX,
-				coordY,
-				zoom;
-	private PasteIF instance = null;
+	private static PasteIF instance = new PasteNull();
+
+	protected PasteIF()
+	{}
 	
-	/**
-	 * @return
-	 */
-	public PasteIF getInstance()
+	public static PasteIF getInstance()
 	{
 		return instance;
 	}
 	
-	/**
-	 * @param sCopy
-	 */
-	public void copy(String sCopy)
+	public void copy()
 	{
-		
+		instance = new Paste();
 	}
 	
 	/**
