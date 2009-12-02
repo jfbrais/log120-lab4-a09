@@ -22,6 +22,6 @@ public class Paste extends PasteIF
 	@Override
 	public void pasteIt() 
 	{
-		
+		new Listeners().createCommand(String.valueOf(coordX), String.valueOf(coordY), String.valueOf(zoom), image);
 	}
 }

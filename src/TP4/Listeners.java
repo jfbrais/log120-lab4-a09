@@ -13,24 +13,13 @@ public class Listeners implements MouseMotionListener, MouseWheelListener, Mouse
 	CommandManager manager = new CommandManager();
 	CareTaker careTaker = CareTaker.getInstance();
 	int posX = 0, posY = 0;
+	int posXinit = 0, posYinit = 0;
+	boolean dragging = false;
 	
 	@Override
 	public void mouseDragged(MouseEvent arg0)
 	{
-		ABSCommand moveX = manager.createCommand("moveX",String.valueOf(arg0.getX()-posX));
-		ABSCommand moveY = manager.createCommand("moveY",String.valueOf(arg0.getY()-posY));
-		
-		if (moveX!=null)
-		{
-			moveX.doIt();
-			careTaker.addMemento(moveX);
-		}
-		
-		if (moveY!=null)
-		{
-			moveY.doIt();
-			careTaker.addMemento(moveY);
-		}
+		createCommand("move",String.valueOf(arg0.getX()-posX),String.valueOf(arg0.getY()-posY),true,false);
 		
 		posX = arg0.getX();
 		posY = arg0.getY();
@@ -45,36 +34,22 @@ public class Listeners implements MouseMotionListener, MouseWheelListener, Mouse
 	@Override
 	public void mouseWheelMoved(MouseWheelEvent arg0)
 	{
-		ABSCommand changeZoom = manager.createCommand("changeZoom", String.valueOf(10*arg0.getWheelRotation()));
-		
-		if (changeZoom!=null)
-		{
-			changeZoom.doIt();
-			careTaker.addMemento(changeZoom);
-		}
+		createCommand("changeZoom", String.valueOf(10*arg0.getWheelRotation()));
 	}
 
 	@Override
 	public void mouseClicked(MouseEvent e)
 	{
 		if (e.getY() > 420)
-		{
-			ABSCommand changeImage = null;
-			
+		{		
 			if (e.getX() > 175 && e.getX() < 275)		
-			{changeImage = manager.createCommand("changeImage", "TICSH.jpg");}
+			{createCommand("changeImage", "TICSH.jpg");}
 			
 			if (e.getX() > 275 && e.getX() < 375)	
-			{changeImage = manager.createCommand("changeImage", "DoIt.jpg");}
+			{createCommand("changeImage", "DoIt.jpg");}
 			
 			if (e.getX() > 375 && e.getX() < 475)	
-			{changeImage = manager.createCommand("changeImage", "Jack.jpg");}
-			
-			if (changeImage!=null)
-			{
-				changeImage.doIt();
-				careTaker.addMemento(changeImage);
-			}
+			{createCommand("changeImage", "Jack.jpg");}
 		}
 	}
 
@@ -97,16 +72,25 @@ public class Listeners implements MouseMotionListener, MouseWheelListener, Mouse
 	{
 		if (e.getY() < 420)
 		{
+			dragging = true;
 			posX = e.getX();
 			posY = e.getY();
+			posXinit = e.getX();
+			posYinit = e.getY();
 		}
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent e)
 	{
-		// TODO Auto-generated method stub
-		
+		if (dragging)
+		{
+			dragging = false;
+			createCommand("move",String.valueOf(e.getX()-posXinit),String.valueOf(e.getY()-posYinit),false,true);
+			
+			posX = e.getX();
+			posY = e.getY();
+		}
 	}
 	
 	public ActionListener getUndoListener()
@@ -163,6 +147,42 @@ public class Listeners implements MouseMotionListener, MouseWheelListener, Mouse
 				PasteIF.getInstance().pasteIt();			
 			}
 		};
+	}
+	
+	public void createCommand(String type, String arg0)
+	{
+		ABSCommand cmd = manager.createCommand(type,arg0);
+		
+		if (cmd!=null)
+		{
+			cmd.doIt();
+			careTaker.addMemento(cmd);
+		}
+	}
+	
+	public void createCommand(String type, String arg0, String arg1, boolean doIt, boolean memento)
+	{
+		ABSCommand cmd = manager.createCommand(type,arg0,arg1);
+		
+		if (cmd!=null)
+		{
+			if (doIt)
+				cmd.doIt();
+			
+			if (memento)
+				careTaker.addMemento(cmd);
+		}
+	}
+	
+	public void createCommand(String arg0, String arg1, String arg2, String arg3)
+	{
+		ABSCommand all = manager.createCommand(arg0,arg1,arg2,arg3);
+		
+		if (all!=null)
+		{
+			all.doIt();
+			careTaker.addMemento(all);
+		}
 	}
 
 	//LORS DE LA RÉCUPÉRATION D'UNE CMD DE CARETAKER & CMDMANAGER, VÉRIFIER QUE C'EST != DE NULL
