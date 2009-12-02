@@ -9,9 +9,7 @@ public class ModelePosition extends Observable
 	private int coordY = 0;
 	
 	private ModelePosition()
-	{
-		
-	}
+	{}
 	
 	public static ModelePosition getInstance()
 	{
@@ -30,7 +28,7 @@ public class ModelePosition extends Observable
 	
 	public void setX(int x)
 	{
-		coordX = x;
+		coordX += x;
 		
 		setChanged();
 		
@@ -39,7 +37,7 @@ public class ModelePosition extends Observable
 	
 	public void setY(int y)
 	{
-		coordY = y;
+		coordY += y;
 		
 		setChanged();
 		

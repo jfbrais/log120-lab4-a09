@@ -13,9 +13,7 @@ public class ModeleZoom extends Observable
 	private int zoom = 100;
 
 	private ModeleZoom()
-	{
-
-	}
+	{}
 
 	public static ModeleZoom getInstance()
 	{

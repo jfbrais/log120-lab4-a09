@@ -25,8 +25,10 @@ public class VueImage extends JPanel implements Observer
 		this.setBackground(Color.BLACK);
 		this.setBounds(bounds);
 		
-		this.addMouseMotionListener(new Listeners());
-		this.addMouseWheelListener(new Listeners());
+		Listeners listener = new Listeners();
+		this.addMouseMotionListener(listener);
+		this.addMouseWheelListener(listener);
+		this.addMouseListener(listener);
 		
 		new Target().registrerPosition(this);
 		new Target().registrerZoom(this);
