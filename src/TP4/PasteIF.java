@@ -1,16 +1,16 @@
 package TP4;
 
-public abstract class Paste 
+public abstract class PasteIF 
 {
 	private int coordX,
 				coordY,
 				zoom;
-	private Paste instance = null;
+	private PasteIF instance = null;
 	
 	/**
 	 * @return
 	 */
-	public Paste getInstance()
+	public PasteIF getInstance()
 	{
 		return instance;
 	}
