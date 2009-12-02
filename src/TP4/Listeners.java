@@ -12,12 +12,13 @@ public class Listeners implements MouseMotionListener, MouseWheelListener, Mouse
 {
 	CommandManager manager = new CommandManager();
 	CareTaker careTaker = CareTaker.getInstance();
+	int posX = 0, posY = 0;
 	
 	@Override
 	public void mouseDragged(MouseEvent arg0)
 	{
-		ABSCommand moveX = manager.createCommand("moveX",String.valueOf(arg0.getX()));
-		ABSCommand moveY = manager.createCommand("moveY",String.valueOf(arg0.getY()));
+		ABSCommand moveX = manager.createCommand("moveX",String.valueOf(arg0.getX()-posX));
+		ABSCommand moveY = manager.createCommand("moveY",String.valueOf(arg0.getY()-posY));
 		
 		if (moveX!=null)
 		{
@@ -30,6 +31,9 @@ public class Listeners implements MouseMotionListener, MouseWheelListener, Mouse
 			moveY.doIt();
 			careTaker.addMemento(moveY);
 		}
+		
+		posX = arg0.getX();
+		posY = arg0.getY();
 	}
 
 	@Override
@@ -54,21 +58,24 @@ public class Listeners implements MouseMotionListener, MouseWheelListener, Mouse
 	@Override
 	public void mouseClicked(MouseEvent e)
 	{
-		ABSCommand changeImage = null;
-		
-		if (e.getX() > 175 && e.getX() < 275)		
-		{changeImage = manager.createCommand("changeImage", "TICSH.jpg");}
-		
-		if (e.getX() > 275 && e.getX() < 375)	
-		{changeImage = manager.createCommand("changeImage", "DoIt.jpg");}
-		
-		if (e.getX() > 375 && e.getX() < 475)	
-		{changeImage = manager.createCommand("changeImage", "Jack.jpg");}
-		
-		if (changeImage!=null)
+		if (e.getY() > 420)
 		{
-			changeImage.doIt();
-			careTaker.addMemento(changeImage);
+			ABSCommand changeImage = null;
+			
+			if (e.getX() > 175 && e.getX() < 275)		
+			{changeImage = manager.createCommand("changeImage", "TICSH.jpg");}
+			
+			if (e.getX() > 275 && e.getX() < 375)	
+			{changeImage = manager.createCommand("changeImage", "DoIt.jpg");}
+			
+			if (e.getX() > 375 && e.getX() < 475)	
+			{changeImage = manager.createCommand("changeImage", "Jack.jpg");}
+			
+			if (changeImage!=null)
+			{
+				changeImage.doIt();
+				careTaker.addMemento(changeImage);
+			}
 		}
 	}
 
@@ -89,8 +96,11 @@ public class Listeners implements MouseMotionListener, MouseWheelListener, Mouse
 	@Override
 	public void mousePressed(MouseEvent e)
 	{
-		// TODO Auto-generated method stub
-		
+		if (e.getY() < 420)
+		{
+			posX = e.getX();
+			posY = e.getY();
+		}
 	}
 
 	@Override

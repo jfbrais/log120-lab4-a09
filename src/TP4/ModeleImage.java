@@ -8,9 +8,7 @@ public class ModeleImage extends Observable
 	private String image ="";
 	
 	private ModeleImage()
-	{
-		
-	}
+	{}
 	
 	public String getImage()
 	{
