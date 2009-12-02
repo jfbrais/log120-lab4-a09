@@ -52,7 +52,6 @@ public class Listeners implements MouseMotionListener, MouseWheelListener, Mouse
 			changeZoom.doIt();
 			careTaker.addMemento(changeZoom);
 		}
-		
 	}
 
 	@Override
@@ -149,7 +148,7 @@ public class Listeners implements MouseMotionListener, MouseWheelListener, Mouse
 			@Override
 			public void actionPerformed(ActionEvent e)
 			{
-				System.out.println("Copy");			
+				PasteIF.getInstance().copy();
 			}
 		};
 	}
@@ -161,7 +160,7 @@ public class Listeners implements MouseMotionListener, MouseWheelListener, Mouse
 			@Override
 			public void actionPerformed(ActionEvent e)
 			{
-				System.out.println("Paste");			
+				PasteIF.getInstance().pasteIt();			
 			}
 		};
 	}
