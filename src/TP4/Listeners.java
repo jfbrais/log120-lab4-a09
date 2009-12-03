@@ -12,11 +12,11 @@ import javax.swing.JOptionPane;
 
 public class Listeners implements MouseMotionListener, MouseWheelListener, MouseListener
 {
-	CommandManager manager = new CommandManager();
-	CareTaker careTaker = CareTaker.getInstance();
-	int posX = 0, posY = 0;
-	int posXinit = 0, posYinit = 0;
-	boolean dragging = false;
+	private CommandManager manager = new CommandManager();
+	private CareTaker careTaker = CareTaker.getInstance();
+	private int posX = 0, posY = 0;
+	private int posXinit = 0, posYinit = 0;
+	private boolean dragging = false;
 	
 	@Override
 	public void mouseDragged(MouseEvent arg0)
@@ -213,6 +213,4 @@ public class Listeners implements MouseMotionListener, MouseWheelListener, Mouse
 			careTaker.addMemento(all);
 		}
 	}
-
-	//LORS DE LA RÉCUPÉRATION D'UNE CMD DE CARETAKER & CMDMANAGER, VÉRIFIER QUE C'EST != DE NULL
 }
