@@ -63,6 +63,13 @@ public class CommandManager
 		}
 	}
 	
+	/**
+	 * Crée une commande et le undo quand on change la position de l'image
+	 * @param type
+	 * @param arg0
+	 * @param arg1
+	 * @return
+	 */
 	public ABSCommand createCommand(String type, final String arg0, final String arg1)
 	{
 		try
@@ -98,6 +105,14 @@ public class CommandManager
 		}		
 	}
 	
+	/**
+	 * Crée une commande et le undo quand on change le niveau de zoom et la position de l'image
+	 * @param arg0
+	 * @param arg1
+	 * @param arg2
+	 * @param arg3
+	 * @return
+	 */
 	public ABSCommand createCommand(final String arg0, final String arg1, final String arg2, final String arg3)
 	{
 		try
