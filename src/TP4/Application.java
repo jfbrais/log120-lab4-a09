@@ -13,12 +13,21 @@ import javax.swing.JMenuItem;
 import javax.swing.KeyStroke;
 import javax.swing.WindowConstants;
 
+/**
+ * Contient le point d'entré du programme le l'interface graphique
+ *
+ */
 public class Application
 {
 	JMenuBar menuBar = new JMenuBar();
 	JMenu menu;
 	JMenuItem menuItem;
 	
+	/**Point d'entrée du programme
+	 * On y déclare les diférents panel et frames du GUI
+	 * 
+	 * @param args
+	 */
 	public static void main(String[] args)
 	{
 		Application app = new Application();
@@ -47,6 +56,11 @@ public class Application
 		frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 	}
 	
+	/**
+	 * Crée les menus
+	 * 
+	 * @param app
+	 */
 	private void createMenu(Application app)
 	{
 		app.menu = new JMenu("File");
@@ -65,6 +79,9 @@ public class Application
 		app.menuBar.add(app.menu);
 	}
 	
+	/**
+	 *  Configure le menu Quitter
+	 */
 	private void quitMenu()
 	{
 		menuItem = new JMenuItem("Quit");
@@ -73,6 +90,9 @@ public class Application
 		menu.add(menuItem);
 	}
 	
+	/**
+	 * Configure le menu Undo
+	 */
 	private void undoMenu()
 	{
 		menuItem = new JMenuItem("Undo");
@@ -81,6 +101,9 @@ public class Application
 		menu.add(menuItem);
 	}
 	
+	/**
+	 * Configure le menu Redo
+	 */
 	private void redoMenu()
 	{
 		menuItem = new JMenuItem("Redo");
@@ -89,6 +112,9 @@ public class Application
 		menu.add(menuItem);
 	}
 	
+	/**
+	 * Configure le menu Copier
+	 */
 	private void copierMenu()
 	{
 		menuItem = new JMenuItem("Copier");
@@ -97,6 +123,9 @@ public class Application
 		menu.add(menuItem);
 	}
 	
+	/**
+	 * Configure le menu Coller
+	 */
 	private void collerMenu()
 	{
 		menuItem = new JMenuItem("Coller");
@@ -105,6 +134,9 @@ public class Application
 		menu.add(menuItem);
 	}
 	
+	/**
+	 * Configure le menu About
+	 */
 	private void aboutMenu()
 	{
 		menuItem = new JMenuItem("About");
