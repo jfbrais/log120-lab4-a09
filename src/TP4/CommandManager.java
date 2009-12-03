@@ -1,7 +1,17 @@
 package TP4;
 
+/**
+ * s'occupe des commandes et de leurs commandes inverses
+ *
+ */
 public class CommandManager
 {
+	/**
+	 * Crée une commande et le undo quand on change le niveau de zoom
+	 * @param type
+	 * @param arg0
+	 * @return
+	 */
 	public ABSCommand createCommand(String type, final String arg0)
 	{
 		try

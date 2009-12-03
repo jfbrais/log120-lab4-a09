@@ -2,22 +2,42 @@ package TP4;
 
 import java.util.ArrayList;
 
+/**
+ * S'occupe de la gestion des commande d'annulation et de répétition
+ *
+ */
 public class CareTaker
 {
+	/**
+	 * Static afin de rendre la classe singleton
+	 */
 	private static CareTaker instance = new CareTaker();
 	ArrayList<ABSCommand> redo = new ArrayList<ABSCommand>();
 	ArrayList<ABSCommand> undo = new ArrayList<ABSCommand>();
 	
+	/**
+	 * Constructeur privé afin de rendre la classe singleton
+	 */
 	private CareTaker()
 	{
 		
 	}
 	
+	/**
+	 * Retroune l'instance unique de Caretaker
+	 * @return instance
+	 */
 	public static CareTaker getInstance()
 	{
 		return instance;
 	}
 	
+	/**
+	 * Crée un nouveau Memento et l'ajoute dans le stack
+	 * Crée aussi une arrayList pour le Redo
+	 * 
+	 * @param newMemento
+	 */
 	public void addMemento(ABSCommand newMemento)
 	{
 		undo.add(newMemento);
@@ -25,6 +45,12 @@ public class CareTaker
 		redo = new ArrayList<ABSCommand>();
 	}
 	
+	/**
+	 * Retourne le dernier memento (ABScommand) disponible dans le stack
+	 * si aucune.. retourne null
+	 * Change de pile (stack) le undo par la suite
+	 * @return
+	 */
 	public ABSCommand getUndoMemento()
 	{
 		if (undo.size() > 0)
@@ -37,6 +63,11 @@ public class CareTaker
 			return null;
 	}
 	
+	/**
+	 * Retourne le dernier Redo
+	 * Change de pile (stack) le redo par la suite
+	 * @return
+	 */
 	public ABSCommand getRedoMemento()
 	{
 		if (redo.size() > 0)
