@@ -16,9 +16,9 @@ import javax.swing.JPanel;
 
 public class VueVignette extends JPanel implements Observer
 {
-	Rectangle bounds = new Rectangle(150, 420, 350, 80);
-	String image = "";
-	int posX=0,posY=0,zoom=100;
+	private Rectangle bounds = new Rectangle(150, 420, 350, 80);
+	private String image = "";
+	private int posX=0,posY=0,zoom=100;
 	
 	public VueVignette()
 	{
