@@ -16,9 +16,9 @@ import javax.swing.JPanel;
 
 public class VueImage extends JPanel implements Observer
 {
-	String image = "";
-	Rectangle bounds = new Rectangle(0, 0, 500, 420);
-	int posX = 0, posY = 0, zoom = 100;
+	private String image = "";
+	private Rectangle bounds = new Rectangle(0, 0, 500, 420);
+	private int posX = 0, posY = 0, zoom = 100;
 	
 	public VueImage()
 	{

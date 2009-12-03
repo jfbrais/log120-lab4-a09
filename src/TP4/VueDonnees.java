@@ -12,9 +12,9 @@ import javax.swing.JPanel;
 
 public class VueDonnees extends JPanel implements Observer
 {
-	Rectangle bounds = new Rectangle(0, 420, 150, 80);
-	int posX=0,posY=0,zoom=100;
-	String image = "";
+	private Rectangle bounds = new Rectangle(0, 420, 150, 80);
+	private int posX=0,posY=0,zoom=100;
+	private String image = "";
 	
 	public VueDonnees()
 	{
