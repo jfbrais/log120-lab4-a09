@@ -11,9 +11,9 @@ import java.util.Observer;
 public class Target
 {
 
-	ModeleZoom mZoom = ModeleZoom.getInstance();
-	ModeleImage mImage = ModeleImage.getInstance();
-	ModelePosition mPosition = ModelePosition.getInstance();
+	private ModeleZoom mZoom = ModeleZoom.getInstance();
+	private ModeleImage mImage = ModeleImage.getInstance();
+	private ModelePosition mPosition = ModelePosition.getInstance();
 
 	public String getImage()
 	{

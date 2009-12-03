@@ -12,8 +12,8 @@ public class CareTaker
 	 * Static afin de rendre la classe singleton
 	 */
 	private static CareTaker instance = new CareTaker();
-	ArrayList<ABSCommand> redo = new ArrayList<ABSCommand>();
-	ArrayList<ABSCommand> undo = new ArrayList<ABSCommand>();
+	private ArrayList<ABSCommand> redo = new ArrayList<ABSCommand>();
+	private ArrayList<ABSCommand> undo = new ArrayList<ABSCommand>();
 	
 	/**
 	 * Constructeur privé afin de rendre la classe singleton
