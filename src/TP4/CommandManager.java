@@ -112,8 +112,8 @@ public class CommandManager
 				@Override
 				public void undoIt()
 				{
-					new Target().setX(moveX);
-					new Target().setY(moveY);
+					new Target().setX(moveX*-1);
+					new Target().setY(moveY*-1);
 					new Target().setZoom(changeZoom);	
 					new Target().setImage(undoImage);
 				}
