@@ -10,6 +10,10 @@ import java.awt.event.MouseWheelListener;
 
 import javax.swing.JOptionPane;
 
+/**
+ * Prend en charge tout les évements générés par les vues et les menus
+ *
+ */
 public class Listeners implements MouseMotionListener, MouseWheelListener, MouseListener
 {
 	private CommandManager manager = new CommandManager();
@@ -95,6 +99,10 @@ public class Listeners implements MouseMotionListener, MouseWheelListener, Mouse
 		}
 	}
 	
+	/**
+	 * Retourne un ActionListener qui s'occupe du menu Quitter
+	 * @return ActionListener
+	 */
 	public ActionListener getQuitListener()
 	{
 		return new ActionListener()
@@ -107,6 +115,10 @@ public class Listeners implements MouseMotionListener, MouseWheelListener, Mouse
 		};
 	}
 	
+	/**
+	 *  Retourne un ActionListener qui s'occupe du menu Undo
+	 * @return ActionListener
+	 */
 	public ActionListener getUndoListener()
 	{
 		return new ActionListener()
@@ -123,6 +135,10 @@ public class Listeners implements MouseMotionListener, MouseWheelListener, Mouse
 		};
 	}
 	
+	/** 
+	 * Retourne un ActionListener qui s'occupe du menu Redo
+	 * @return ActionListener
+	 */
 	public ActionListener getRedoListener()
 	{
 		return new ActionListener()
@@ -139,6 +155,10 @@ public class Listeners implements MouseMotionListener, MouseWheelListener, Mouse
 		};
 	}
 	
+	/**
+	 * Retourne un ActionListener qui s'occupe du menu Copy
+	 * @return ActionListener
+	 */
 	public ActionListener getCopyListener()
 	{
 		return new ActionListener()
@@ -151,6 +171,10 @@ public class Listeners implements MouseMotionListener, MouseWheelListener, Mouse
 		};
 	}
 	
+	/**
+	 * Retourne un ActionListener qui s'occupe du menu Paste
+	 * @return ActionListener
+	 */
 	public ActionListener getPasteListener()
 	{
 		return new ActionListener()
@@ -163,6 +187,10 @@ public class Listeners implements MouseMotionListener, MouseWheelListener, Mouse
 		};
 	}
 	
+	/**
+	 * Retourne un ActionListener qui s'occupe du menu About
+	 * @return ActionListener
+	 */
 	public ActionListener getAboutListener()
 	{
 		return new ActionListener()
@@ -178,6 +206,11 @@ public class Listeners implements MouseMotionListener, MouseWheelListener, Mouse
 		};
 	}
 	
+	/**
+	 * Crée de passer une commande ''standard'
+	 * @param type
+	 * @param arg0
+	 */
 	public void createCommand(String type, String arg0)
 	{
 		ABSCommand cmd = manager.createCommand(type,arg0);
@@ -189,6 +222,15 @@ public class Listeners implements MouseMotionListener, MouseWheelListener, Mouse
 		}
 	}
 	
+	/**
+	 * Permet de passer des commande en spécifiant si on doit les enregistrer 
+	 * dans un Memento et si on doit les exécuter
+	 * @param type
+	 * @param arg0
+	 * @param arg1
+	 * @param doIt
+	 * @param memento
+	 */
 	public void createCommand(String type, String arg0, String arg1, boolean doIt, boolean memento)
 	{
 		ABSCommand cmd = manager.createCommand(type,arg0,arg1);
@@ -203,6 +245,14 @@ public class Listeners implements MouseMotionListener, MouseWheelListener, Mouse
 		}
 	}
 	
+	/**
+	 * Permet de passer une commande pour tout changer d'un coup
+	 * ex: un paste
+	 * @param arg0
+	 * @param arg1
+	 * @param arg2
+	 * @param arg3
+	 */
 	public void createCommand(String arg0, String arg1, String arg2, String arg3)
 	{
 		ABSCommand all = manager.createCommand(arg0,arg1,arg2,arg3);
