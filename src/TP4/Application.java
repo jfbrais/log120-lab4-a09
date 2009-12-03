@@ -16,7 +16,7 @@ import javax.swing.WindowConstants;
 public class Application
 {
 	JMenuBar menuBar = new JMenuBar();
-	JMenu menu = new JMenu("Menu");
+	JMenu menu;
 	JMenuItem menuItem;
 	
 	public static void main(String[] args)
@@ -37,11 +37,10 @@ public class Application
 		new Target().setImage("DoIt.jpg");
 		
 		frame.setJMenuBar(app.menuBar);
-		app.menuBar.add(app.menu);
 		app.createMenu(app);
 		
 		frame.setSize(500,550);//527
-		frame.setAlwaysOnTop(true);
+//		frame.setAlwaysOnTop(true);
 		frame.setVisible(true);
 		frame.setResizable(false);
 		
@@ -50,41 +49,67 @@ public class Application
 	
 	private void createMenu(Application app)
 	{
+		app.menu = new JMenu("File");
+		app.quitMenu();
+		app.menuBar.add(app.menu);
+		
+		app.menu = new JMenu("Edit");
 		app.undoMenu();
 		app.redoMenu();
 		app.copierMenu();
 		app.collerMenu();
+		app.menuBar.add(app.menu);
+		
+		app.menu = new JMenu("?");
+		app.aboutMenu();
+		app.menuBar.add(app.menu);
+	}
+	
+	private void quitMenu()
+	{
+		menuItem = new JMenuItem("Quit");
+		menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, ActionEvent.CTRL_MASK));
+		menuItem.addActionListener(new Listeners().getQuitListener());
+		menu.add(menuItem);
 	}
 	
 	private void undoMenu()
 	{
 		menuItem = new JMenuItem("Undo");
-		menu.add(menuItem);
 		menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Z, ActionEvent.CTRL_MASK));
 		menuItem.addActionListener(new Listeners().getUndoListener());
+		menu.add(menuItem);
 	}
 	
 	private void redoMenu()
 	{
 		menuItem = new JMenuItem("Redo");
-		menu.add(menuItem);
 		menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Y, ActionEvent.CTRL_MASK));
 		menuItem.addActionListener(new Listeners().getRedoListener());
+		menu.add(menuItem);
 	}
 	
 	private void copierMenu()
 	{
 		menuItem = new JMenuItem("Copier");
-		menu.add(menuItem);
 		menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C, ActionEvent.CTRL_MASK));
 		menuItem.addActionListener(new Listeners().getCopyListener());
+		menu.add(menuItem);
 	}
 	
 	private void collerMenu()
 	{
 		menuItem = new JMenuItem("Coller");
-		menu.add(menuItem);
 		menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_V, ActionEvent.CTRL_MASK));
 		menuItem.addActionListener(new Listeners().getPasteListener());
+		menu.add(menuItem);
+	}
+	
+	private void aboutMenu()
+	{
+		menuItem = new JMenuItem("About");
+		menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_W, ActionEvent.CTRL_MASK));
+		menuItem.addActionListener(new Listeners().getAboutListener());
+		menu.add(menuItem);
 	}
 }

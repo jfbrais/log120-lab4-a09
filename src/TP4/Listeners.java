@@ -8,6 +8,8 @@ import java.awt.event.MouseMotionListener;
 import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
 
+import javax.swing.JOptionPane;
+
 public class Listeners implements MouseMotionListener, MouseWheelListener, MouseListener
 {
 	CommandManager manager = new CommandManager();
@@ -93,6 +95,18 @@ public class Listeners implements MouseMotionListener, MouseWheelListener, Mouse
 		}
 	}
 	
+	public ActionListener getQuitListener()
+	{
+		return new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent e)
+			{
+				System.exit(0);
+			}
+		};
+	}
+	
 	public ActionListener getUndoListener()
 	{
 		return new ActionListener()
@@ -145,6 +159,21 @@ public class Listeners implements MouseMotionListener, MouseWheelListener, Mouse
 			public void actionPerformed(ActionEvent e)
 			{
 				PasteIF.getInstance().pasteIt();			
+			}
+		};
+	}
+	
+	public ActionListener getAboutListener()
+	{
+		return new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent e)
+			{
+				JOptionPane.showMessageDialog(null, 
+						"<HTML><P>&copy;&nbsp; 2009 <tt>Gabriel Desmarais</tt> and his team...</p><p></html>",
+						"About",
+						JOptionPane.INFORMATION_MESSAGE);		
 			}
 		};
 	}
