@@ -1,12 +1,12 @@
 package TP4;
 
-import java.awt.image.BufferedImage;
+import java.io.Serializable;
 import java.util.Observer;
 
 /**
  * Gere les acces aux différents modèles
  */
-public class Target
+public class Target implements Serializable
 {
 
 	private ModeleZoom mZoom = ModeleZoom.getInstance();
