@@ -10,12 +10,19 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+/**
+ * affiche les donnes sur l'état du zoom et la position de l'image
+ *
+ */
 public class VueDonnees extends JPanel implements Observer
 {
 	private Rectangle bounds = new Rectangle(0, 420, 150, 80);
 	private int posX=0,posY=0,zoom=100;
 	private String image = "";
 	
+	/**
+	 * s'enregistre aupres d'une target
+	 */
 	public VueDonnees()
 	{
 		this.setBackground(Color.LIGHT_GRAY);
@@ -28,6 +35,7 @@ public class VueDonnees extends JPanel implements Observer
 		this.setLayout(null);
 	}
 	
+
 	public void paintComponent(Graphics g)
 	{
 		super.paintComponent(g);
