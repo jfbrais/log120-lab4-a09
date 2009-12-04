@@ -1,5 +1,6 @@
 package TP4;
 
+import java.io.Serializable;
 import java.util.Observable;
 
 /**
@@ -7,7 +8,7 @@ import java.util.Observable;
  * c'est une classe singleton
  * 
  */
-public class ModelePosition extends Observable
+public class ModelePosition extends Observable implements Serializable
 {
 	/**
 	 *  instance Static afin de rendre la classe singleton

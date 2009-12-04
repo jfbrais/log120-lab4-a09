@@ -1,5 +1,6 @@
 package TP4;
 
+import java.io.Serializable;
 import java.util.Observable;
 
 /**
@@ -9,7 +10,7 @@ import java.util.Observable;
  * NE CONTIENT PAS les infos de zoom et de position
  *
  */
-public class ModeleImage extends Observable 
+public class ModeleImage extends Observable implements Serializable
 {
 	/**
 	 *  instance Static afin de rendre la classe singleton

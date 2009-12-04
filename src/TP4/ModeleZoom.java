@@ -1,5 +1,6 @@
 package TP4;
 
+import java.io.Serializable;
 import java.util.Observable;
 
 /**
@@ -12,11 +13,7 @@ import java.util.Observable;
  * @author Claude Bouchard
  *
  */
-/**
- * @author Claude Bouchard
- *
- */
-public class ModeleZoom extends Observable
+public class ModeleZoom extends Observable implements Serializable
 {
 	/**
 	 *   instance Static afin de rendre la classe singleton

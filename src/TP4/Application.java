@@ -64,6 +64,8 @@ public class Application
 	private void createMenu(Application app)
 	{
 		app.menu = new JMenu("File");
+		app.saveMenu();
+		app.openMenu();
 		app.quitMenu();
 		app.menuBar.add(app.menu);
 		
@@ -77,6 +79,22 @@ public class Application
 		app.menu = new JMenu("?");
 		app.aboutMenu();
 		app.menuBar.add(app.menu);
+	}
+	
+	private void saveMenu()
+	{
+		menuItem = new JMenuItem("Save");
+		menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, ActionEvent.CTRL_MASK));
+		menuItem.addActionListener(new Listeners().getSaveListener());
+		menu.add(menuItem);
+	}
+	
+	private void openMenu()
+	{
+		menuItem = new JMenuItem("Open");
+		menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D, ActionEvent.CTRL_MASK));
+		menuItem.addActionListener(new Listeners().getOpenListener());
+		menu.add(menuItem);
 	}
 	
 	/**
