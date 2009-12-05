@@ -111,19 +111,7 @@ public class Listeners implements MouseMotionListener, MouseWheelListener, Mouse
 			@Override
 			public void actionPerformed(ActionEvent e)
 			{
-				FileOutputStream fos = null;
-				ObjectOutputStream out = null;
-				try
-				{
-					fos = new FileOutputStream("C:\\Users\\Gab\\Desktop\\Choses\\Da.txt");
-					out = new ObjectOutputStream(fos);
-					out.writeObject(new Target());
-					out.close();
-				}
-				catch(IOException ex)
-				{
-					ex.printStackTrace();
-				}
+				new Serializer().serialize();
 			}
 		};
 	}
@@ -135,26 +123,9 @@ public class Listeners implements MouseMotionListener, MouseWheelListener, Mouse
 			@Override
 			public void actionPerformed(ActionEvent e)
 			{
-				FileInputStream fis = null;
-				ObjectInputStream in = null;
-				try
-				{
-					fis = new FileInputStream("C:\\Users\\Gab\\Desktop\\Choses\\Da.txt");
-					in = new ObjectInputStream(fis);
-					Target da = (Target)in.readObject();
-					in.close();
-					
-					createCommand(String.valueOf(da.getX()), String.valueOf(da.getY()), String.valueOf(da.getZoom()), da.getImage());
-				}
-				catch(IOException ex)
-				{
-					ex.printStackTrace();
-				}
-				catch (ClassNotFoundException ex)
-				{
-					// TODO Auto-generated catch block
-					ex.printStackTrace();
-				}
+				Serializer serializer = new Serializer();
+				serializer.unserialize();
+				createCommand(serializer.getArg0(), serializer.getArg1(), serializer.getArg2(), serializer.getArg3());
 			}
 		};
 	}
