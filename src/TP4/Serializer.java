@@ -11,11 +11,18 @@ import javax.swing.filechooser.FileFilter;
 
 //http://csourcesearch.net/java/fid5F9C874C7C239B9B3EF32D3E0DC3402281D6B75C.aspx?s=mdef%3Ainsert
 //http://csourcesearch.net/java/fidAF96B0DE56932794C01E387C4178409A8A5479AD.aspx?s=mdef%3Ainsert
+/**
+ * Cette classe sert a Sérialiser les objet afin de les écrires sur le disque
+ *
+ */
 public class Serializer
 {	
 	private String arg0 = "", arg1 = "", arg2 = "", arg3 = "";
 	private JFileChooser jfcChooser = new JFileChooser();
 	
+	/**
+	 * Constructeur.. crée un JFileChooser et lui applique les filtres
+	 */
 	public Serializer()
 	{		
 		jfcChooser.addChoosableFileFilter(new FileFilter()
@@ -55,6 +62,9 @@ public class Serializer
 		});
 	}
 	
+	/**
+	 * Séréalise 
+	 */
 	public void serialize()
 	{
 		FileOutputStream fos = null;
@@ -77,6 +87,9 @@ public class Serializer
 		}
 	}
 	
+	/**
+	 * Désérialise
+	 */
 	public void unserialize()
 	{
 		FileInputStream fis = null;
