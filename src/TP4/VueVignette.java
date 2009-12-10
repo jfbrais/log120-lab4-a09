@@ -15,12 +15,19 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+/**
+ * affiche l'image en format réduit et qui ne bouge pas
+ *
+ */
 public class VueVignette extends JPanel implements Observer
 {
 	private Rectangle bounds = new Rectangle(150, 420, 350, 80);
 	private String image = "";
 	private int posX=0,posY=0,zoom=100;
 	
+	/**
+	 * constructeur.. enregistre un mousse listener
+	 */
 	public VueVignette()
 	{
 		this.setBackground(Color.DARK_GRAY);
@@ -85,6 +92,16 @@ public class VueVignette extends JPanel implements Observer
 	}
 	
 	//http://java.sun.com/products/java-media/2D/reference/faqs/index.html#Q_How_do_I_create_a_resized_copy
+	/**
+	 * 
+	 * Créer une version minitaturisé de l'image en cours d'affichage
+	 * 
+	 * @param originalImage
+	 * @param scaledWidth
+	 * @param scaledHeight
+	 * @param preserveAlpha
+	 * @return
+	 */
 	BufferedImage createResizedCopy(Image originalImage, int scaledWidth, int scaledHeight, boolean preserveAlpha)
 	{
 		int imageType = preserveAlpha ? BufferedImage.TYPE_INT_RGB : BufferedImage.TYPE_INT_ARGB;
