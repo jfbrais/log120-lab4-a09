@@ -68,13 +68,8 @@ public class ModelePosition extends Observable implements Serializable
 	 */
 	public void setY(int y)
 	{
-//		if (coordY + y < 500 && coordY + y > -500)
-			coordY += y;
-//		else if (coordY + y > 500)
-//			coordY = -500+y;
-//		else
-//			coordY = 500-y;
-		
+		coordY += y;
+
 		setChanged();
 		
 		notifyObservers("Position");
