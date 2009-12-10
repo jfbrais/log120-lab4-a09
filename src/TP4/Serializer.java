@@ -63,7 +63,7 @@ public class Serializer
 	}
 	
 	/**
-	 * Séréalise 
+	 * Séréalise un objet
 	 */
 	public void serialize()
 	{
@@ -88,7 +88,7 @@ public class Serializer
 	}
 	
 	/**
-	 * Désérialise
+	 * Désérialise un objet
 	 */
 	public void unserialize()
 	{
@@ -121,21 +121,33 @@ public class Serializer
 		}
 	}
 	
+	/**
+	 * Retourne la Valeur X de l'objet désérialiser
+	 */
 	public String getArg0()
 	{
 		return arg0;
 	}
 	
+	/**
+	 * Retourne la Valeur Y de l'objet désérialiser
+	 */
 	public String getArg1()
 	{
 		return arg1;
 	}
 	
+	/**
+	 *Retourne la Valeur du zoom de l'objet désérialiser
+	 */
 	public String getArg2()
 	{
 		return arg2;
 	}
 	
+	/**
+	 * Retourne la Valeur de l'image de l'objet désérialiser
+	 */
 	public String getArg3()
 	{
 		return arg3;
