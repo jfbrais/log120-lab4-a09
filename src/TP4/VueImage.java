@@ -15,12 +15,19 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+/**
+ * affiche l'image selon les donné du model lié	
+ *
+ */
 public class VueImage extends JPanel implements Observer
 {
 	private String image = "";
 	private Rectangle bounds = new Rectangle(0, 0, 500, 420);
 	private int posX = 0, posY = 0, zoom = 100;
 	
+	/**
+	 * constructeur: s'enregistre aupres des targets et ajoute des listeners
+	 */
 	public VueImage()
 	{
 		this.setBackground(Color.BLACK);
