@@ -16,7 +16,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
- * affiche l'image selon les donné du model lié	
+ * Affiche l'image selon les donné du model lié	
  *
  */
 public class VueImage extends JPanel implements Observer
@@ -26,7 +26,7 @@ public class VueImage extends JPanel implements Observer
 	private int posX = 0, posY = 0, zoom = 100;
 	
 	/**
-	 * constructeur: s'enregistre aupres des targets et ajoute des listeners
+	 * Constructeur: s'enregistre aupres des targets et ajoute des listeners
 	 */
 	public VueImage()
 	{

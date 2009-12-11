@@ -16,7 +16,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
- * affiche l'image en format réduit et qui ne bouge pas
+ * Affiche l'image en format réduit et qui ne bouge pas
  *
  */
 public class VueVignette extends JPanel implements Observer
@@ -26,7 +26,7 @@ public class VueVignette extends JPanel implements Observer
 	private int posX=0,posY=0,zoom=100;
 	
 	/**
-	 * constructeur.. enregistre un mousse listener
+	 * Constructeur.. enregistre un mousse listener
 	 */
 	public VueVignette()
 	{
