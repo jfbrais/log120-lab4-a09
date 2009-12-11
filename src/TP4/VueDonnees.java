@@ -11,7 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
- * affiche les donnes sur l'état du zoom et la position de l'image
+ * Affiche les donnes sur l'état du zoom et la position de l'image
  *
  */
 public class VueDonnees extends JPanel implements Observer
@@ -21,7 +21,7 @@ public class VueDonnees extends JPanel implements Observer
 	private String image = "";
 	
 	/**
-	 * s'enregistre aupres d'une target
+	 * S'enregistre aupres d'une target
 	 */
 	public VueDonnees()
 	{
