@@ -33,10 +33,6 @@ public class VueVignette extends JPanel implements Observer
 		this.setBackground(Color.DARK_GRAY);
 		this.setBounds(bounds);
 		
-		//new Target().registrerPosition(this);
-		//new Target().registrerZoom(this);
-		//new Target().registrerImage(this);
-		
 		this.addMouseListener(new Listeners());
 		
 		this.setLayout(null);
@@ -66,12 +62,7 @@ public class VueVignette extends JPanel implements Observer
 		JLabel label3 = new JLabel(thumbnailIcon3);
 		label3.setBounds(375,420,100,80);
 		this.add(label3);
-		
-//		g.setColor(Color.RED);
-//		g.drawRect(275+posX*100/500, 420+posY*80/420, 100*zoom/100, 80*zoom/100);
-		//Fuck, il devrais pas rappetisser, mais grossir quand on dezoom....
 	} 
-	//ImageIcon thumbnailIcon = new ImageIcon(getScaledImage(icon.getImage(), 32, 32));
 
 	@Override
 	public void update(Observable arg0, Object arg1)
@@ -91,6 +82,7 @@ public class VueVignette extends JPanel implements Observer
 		repaint();
 	}
 	
+	//La méthode suivante a été fournie par Sun et est référencée sur le site web suivant : 
 	//http://java.sun.com/products/java-media/2D/reference/faqs/index.html#Q_How_do_I_create_a_resized_copy
 	/**
 	 * 

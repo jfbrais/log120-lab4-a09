@@ -9,8 +9,12 @@ import java.io.ObjectOutputStream;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileFilter;
 
-//http://csourcesearch.net/java/fid5F9C874C7C239B9B3EF32D3E0DC3402281D6B75C.aspx?s=mdef%3Ainsert
-//http://csourcesearch.net/java/fidAF96B0DE56932794C01E387C4178409A8A5479AD.aspx?s=mdef%3Ainsert
+/*
+Le code présent dans les sites web suivant a été utilisé pour configurer cette classe :
+	http://csourcesearch.net/java/fid5F9C874C7C239B9B3EF32D3E0DC3402281D6B75C.aspx?s=mdef%3Ainsert
+	http://csourcesearch.net/java/fidAF96B0DE56932794C01E387C4178409A8A5479AD.aspx?s=mdef%3Ainsert
+*/
+
 /**
  * Cette classe sert a Sérialiser les objet afin de les écrires sur le disque
  *
@@ -27,7 +31,6 @@ public class Serializer
 	{		
 		jfcChooser.addChoosableFileFilter(new FileFilter()
 		{
-
 			@Override
 			public boolean accept(File arg0)
 			{
