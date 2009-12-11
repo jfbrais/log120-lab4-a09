@@ -76,6 +76,7 @@ public class VueImage extends JPanel implements Observer
 		repaint();
 	}
 
+	//La méthode suivante a été fournie par Sun et est référencée sur le site web suivant : 
 	//http://java.sun.com/products/java-media/2D/reference/faqs/index.html#Q_How_do_I_create_a_resized_copy
 	BufferedImage createResizedCopy(Image originalImage, int scaledWidth, int scaledHeight, boolean preserveAlpha)
 	{
